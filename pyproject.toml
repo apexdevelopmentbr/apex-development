@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "apex-core"
+version = "0.1.0"
+description = "Lib core compartilhada da Apex Group Ltda"
+authors = ["Apex <v-emanuel_pereira@apexgroup.com>"]
+packages = [{ include = "apex_core"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+colorlog = "^6.10.1"
+colorama = "^0.4.6"
+logging = "^0.4.9.6"
+click = "^8.3.1"
+
+[tool.poetry.scripts]
+apex-core = "cli.main:cli"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

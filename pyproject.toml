@@ -3,7 +3,7 @@ name = "apex-development"
 version = "0.1.0"
 description = "Lib core compartilhada da Apex Group Ltda"
 authors = ["Apex <v-emanuel_pereira@apexgroup.com>"]
-packages = [{ include = "apex-development"}]
+packages = [{ include = "apex_development", from = "src"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"

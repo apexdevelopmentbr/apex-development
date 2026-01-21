@@ -1,5 +1,6 @@
 from base64 import b64encode
 from typing import Any
+from json import dumps
 
 class ResponseEntity:
 
@@ -11,15 +12,15 @@ class ResponseEntity:
 
     def __init__(self, status_code: int, body: Any, headers: dict[str, Any]=None):
         self.status_code = status_code
-        self.body = body if isinstance(body, (dict, list, str)) else dumps(body)
+        self.body = body if isinstance(body, (dict, list, str)) else dumps(body, ensure_ascii=False)
         self.headers = {**self.CORS_HEADERS,
                         **(headers or {})}
 
     def to_lambda_response(self):
         return {
+            "headers": self.headers,
             "statusCode": self.status_code,
-            "body": self.body,
-            "headers": self.headers
+            "body": self.body
         }
 
 class Response:

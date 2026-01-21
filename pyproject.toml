@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "apex-development"
+version = "0.1.0"
+description = "Lib core compartilhada da Apex Group Ltda"
+authors = ["Apex <v-emanuel_pereira@apexgroup.com>"]
+packages = [{ include = "apex-development"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+logging = "^0.4.9.6"
+boto3 = "^1.42.12"
+botocore = "^1.42.12"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

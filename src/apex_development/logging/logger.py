@@ -1,4 +1,5 @@
 import logging
+from logging import config
 
 
 def get_logger(service_name:str, level_logging: str=logging.INFO) -> logging.Logger:
@@ -30,6 +31,6 @@ def get_logger(service_name:str, level_logging: str=logging.INFO) -> logging.Log
         }
     }
 
-    logging.config.dictConfig(LOGGING_CONFIG)
+    config.dictConfig(LOGGING_CONFIG)
     logger = logging.getLogger(service_name)
     return logger

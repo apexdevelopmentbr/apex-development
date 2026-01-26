@@ -1,7 +1,7 @@
 import logging
 
 
-def setup_log(service_name:str, level_logging: str=logging.INFO) -> logging.Logger:
+def get_logger(service_name:str, level_logging: str=logging.INFO) -> logging.Logger:
     LOGGING_CONFIG = {
         "version": 1,
         "disable_existing_loggers": False,

@@ -12,7 +12,7 @@ class ResponseEntity:
 
     def __init__(self, status_code: int, body: Any, headers: dict[str, Any]=None):
         self.status_code = status_code
-        self.body = body if isinstance(body, (dict, list, str)) else dumps(body, ensure_ascii=False)
+        self.body = body if isinstance(body, str) else dumps(body, ensure_ascii=False)
         self.headers = {**self.CORS_HEADERS,
                         **(headers or {})}
 
